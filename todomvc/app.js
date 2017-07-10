@@ -43,20 +43,6 @@ app.get('/api/todos/:id', (req, res) => {
         })
 })
 
-app.post("/", (req, res) => {
-    let todosData = req.body;
-    let newTodo = new Todos(todosData);
-
-    newTodo.save().then(savedtodo => {
-        res.send(savedtodo);
-    })
-        .catch(err => {
-            res.status(500).send(err);
-        })
-});
-
-
-
 // put routes here
 
 app.patch('api/todos/:id', (req, res) => {
